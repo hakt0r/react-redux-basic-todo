@@ -1,7 +1,6 @@
 
 let data = localStorage.getItem('todoState');
-if ( data ) data = JSON.parse(data);
-else data = {};
+    data = data ? JSON.parse(data) : {};
 
 const defaultState = {
   editIndex:-1,
@@ -77,7 +76,10 @@ const reducer = (state=defaultState,action)=>{
           status:'done'
         };
 
-        result = { ...state, todo:todoList };
+        result = {
+          ...state,
+          todo:todoList
+        };
         break;
 
       case "UNDO":
@@ -88,7 +90,10 @@ const reducer = (state=defaultState,action)=>{
           status:'todo'
         };
 
-      result = { ...state, todo:todoList };
+      result = {
+        ...state,
+        todo:todoList
+      };
       break;
 
     default:
