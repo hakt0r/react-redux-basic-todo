@@ -32,6 +32,11 @@ const reducer = ( state=defaultState, action ) => {
       break;
 
     case "SAVE":
+      if ( state.inputValue.trim() === '' ){
+        result = state;
+        break;
+      }
+
       todoList = [...state.todo];
 
       todoList[state.editIndex] = {
@@ -47,6 +52,14 @@ const reducer = ( state=defaultState, action ) => {
       };
       break;
 
+    case "ABORT":
+      result = {
+        ...state,
+        inputValue: "",
+        editIndex:  -1
+      };
+      break;
+
     case "DEL":
       todoList = [...state.todo];
       todoList.splice(action.index,1);
@@ -57,6 +70,10 @@ const reducer = ( state=defaultState, action ) => {
       break;
 
     case "ADD":
+      if ( state.inputValue.trim() === '' ){
+        result = state;
+        break;
+      }
       todoList = state.todo.slice();
       todoList.push({
         text:   state.inputValue,
