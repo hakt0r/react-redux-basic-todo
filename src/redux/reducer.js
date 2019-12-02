@@ -19,23 +19,25 @@ const reducer = (state=defaultState,action)=>{
     case "INPUT":
       result = {
         ...state,
-        inputValue:action.value}
+        inputValue:action.value
+      };
       break;
 
     case "EDIT":
       result = {
         ...state,
         inputValue:state.todo[action.index].text,
-        editIndex:action.index }
+        editIndex:action.index
+      };
       break;
 
     case "SAVE":
-      todoList = [...state.todo]
+      todoList = [...state.todo];
 
       todoList[state.editIndex] = {
         ...todoList[state.editIndex],
         text:state.inputValue
-      }
+      };
 
       result = {
         ...state,
@@ -46,8 +48,8 @@ const reducer = (state=defaultState,action)=>{
       break;
 
     case "DEL":
-      todoList = [...state.todo]
-      todoList.splice(action.index,1)
+      todoList = [...state.todo];
+      todoList.splice(action.index,1);
       result = {
         ...state,
         todo:todoList
@@ -55,7 +57,7 @@ const reducer = (state=defaultState,action)=>{
       break;
 
     case "ADD":
-      todoList = state.todo.slice()
+      todoList = state.todo.slice();
       todoList.push({
         text: state.inputValue,
         status:'todo'
@@ -68,7 +70,7 @@ const reducer = (state=defaultState,action)=>{
       break;
 
       case "DONE":
-        todoList = [...state.todo]
+        todoList = [...state.todo];
 
         todoList[action.index] = {
           ...todoList[action.index],
@@ -79,12 +81,12 @@ const reducer = (state=defaultState,action)=>{
         break;
 
       case "UNDO":
-        todoList = [...state.todo]
+        todoList = [...state.todo];
 
         todoList[action.index] = {
           ...todoList[action.index],
           status:'todo'
-        }
+        };
 
       result = { ...state, todo:todoList };
       break;
@@ -93,7 +95,7 @@ const reducer = (state=defaultState,action)=>{
       result = state;
       break;
   }
-  localStorage.setItem('todoState',JSON.stringify(result))
+  localStorage.setItem( 'todoState', JSON.stringify(result) );
   return result;
 }
 
