@@ -13,9 +13,9 @@ function Item({item,index,dispatch}){
     <tr>
       <td>{index}</td>
       <td>{text}</td>
-      <td xs={1}>{status}</td>
+      <td>{status}</td>
       <td>
-        <div class="btn-group" role="group" aria-label="Basic example">
+        <div className="btn-group" role="group" aria-label="Basic example">
           { status === 'done'
             ? <Button variant="warning" onClick={clickUndo}>Undo</Button>
             : <Button variant="success" onClick={clickDone}>Done</Button>
