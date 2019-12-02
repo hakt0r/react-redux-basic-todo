@@ -1,16 +1,22 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
+import { Button } from 'react-bootstrap'
 
 function Item({item,index,dispatch}){
-  let { text, state } = item
-  const clickOK   = ()=> { dispatch({type:"DEL",index:index}) }
-  const clickEdit = ()=> { dispatch({type:"EDIT",index:index}) }
+  let { text, status } = item
+  const clickDelete = ()=> { dispatch({type:"DEL", index:index}) }
+  const clickEdit   = ()=> { dispatch({type:"EDIT",index:index}) }
   return (
-    <div>{index} <b>{text}</b> {state}
-      <button onClick={clickEdit}>Edit</button>
-      <button onClick={clickOK}>Delete</button>
-    </div> )
+    <tr>
+      <td>{index}</td>
+      <td>{text}</td>
+      <td xs={1}>{status}</td>
+      <td>
+        <Button variant="warning" onClick={clickEdit}>Edit</Button>
+        <Button variant="danger" onClick={clickDelete}>Delete</Button>
+      </td>
+    </tr> )
 }
 
 export default connect()(Item)

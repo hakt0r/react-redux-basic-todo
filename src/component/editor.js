@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
+import { InputGroup, FormControl, Button } from 'react-bootstrap'
 
 class Editor extends React.Component {
 
@@ -12,22 +13,34 @@ class Editor extends React.Component {
   })}
 
   render(){
-    let { editIndex, inputValue } = this.props
+    let { editIndex, inputValue } = this.props;
+    let buttonTitle, buttonAction;
     if ( editIndex === -1 ) {
-
-      return (
-      <div>
-        <input onChange={this.change} value={inputValue}/>
-        <button onClick={this.add}>Add</button>
-      </div> )}
-    else {
-
-      return (
-      <div>
-        <input onChange={this.change} value={inputValue}/>
-        <button onClick={this.save}>Save</button>
-      </div> )
+      buttonTitle = 'Add'
+      buttonAction = this.add
     }
+    else {
+      buttonTitle = 'Save'
+      buttonAction = this.save
+    }
+    return (
+      <InputGroup className="mb-3">
+        <FormControl
+          onChange={this.change}
+          value={inputValue}
+          placeholder="Todo Description"
+          aria-label="Todo Description"
+          aria-describedby="basic-addon2"
+          />
+        <InputGroup.Append>
+          <Button
+            onClick={buttonAction}
+            value={inputValue}
+            variant="success">
+            {buttonTitle}
+          </Button>
+        </InputGroup.Append>
+    </InputGroup> )
 }}
 
 export default connect( state => { return state } )(Editor)
