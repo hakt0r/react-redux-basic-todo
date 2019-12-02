@@ -54,6 +54,7 @@ const reducer = ( state=defaultState, action ) => {
         ...state,
         todo:       todoList,
         inputValue: "",
+        inputLegal: false,
         editIndex:  -1
       };
       break;
@@ -62,6 +63,7 @@ const reducer = ( state=defaultState, action ) => {
       result = {
         ...state,
         inputValue: "",
+        inputLegal: false,
         editIndex:  -1
       };
       break;
@@ -88,7 +90,8 @@ const reducer = ( state=defaultState, action ) => {
       result = {
         ...state,
         todo:       todoList,
-        inputValue: ""
+        inputValue: "",
+        inputLegal: false
       };
       break;
 
