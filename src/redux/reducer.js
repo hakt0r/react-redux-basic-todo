@@ -1,64 +1,100 @@
 
+let data = localStorage.getItem('todoState');
+if ( data ) data = JSON.parse(data);
+else data = {};
+
 const defaultState = {
   editIndex:-1,
   inputValue:"",
-  todo:[
-    {text:'asd',status:'ok'}
-  ]
+  todo:[],
+  ...data
 }
 
 const reducer = (state=defaultState,action)=>{
 
-  let todoList, {type} = action;
+  let result, todoList, {type} = action;
 
   switch (type){
 
     case "INPUT":
-      return {
+      result = {
         ...state,
         inputValue:action.value}
+      break;
 
     case "EDIT":
-      return {
+      result = {
         ...state,
         inputValue:state.todo[action.index].text,
         editIndex:action.index }
+      break;
 
     case "SAVE":
       todoList = [...state.todo]
 
-      let newItem = {
+      todoList[state.editIndex] = {
         ...todoList[state.editIndex],
         text:state.inputValue
       }
 
-      todoList[state.editIndex] = newItem
-
-      return {
+      result = {
         ...state,
         todo:todoList,
         inputValue:"",
         editIndex:-1
       };
+      break;
 
     case "DEL":
       todoList = [...state.todo]
       todoList.splice(action.index,1)
-      return {
+      result = {
         ...state,
         todo:todoList
       };
+      break;
 
     case "ADD":
       todoList = state.todo.slice()
       todoList.push({
         text: state.inputValue,
-        status: 'todo'
+        status:'todo'
       });
-      return {...state,todo:todoList};
+      result = {
+        ...state,
+        inputValue:"",
+        todo:todoList
+      };
+      break;
 
-    default: return state;
+      case "DONE":
+        todoList = [...state.todo]
+
+        todoList[action.index] = {
+          ...todoList[action.index],
+          status:'done'
+        };
+
+        result = { ...state, todo:todoList };
+        break;
+
+      case "UNDO":
+        todoList = [...state.todo]
+
+        todoList[action.index] = {
+          ...todoList[action.index],
+          status:'todo'
+        }
+
+      result = { ...state, todo:todoList };
+      break;
+
+    default:
+      result = state;
+      break;
   }
+  localStorage.setItem('todoState',JSON.stringify(result))
+  return result;
 }
 
 export default reducer

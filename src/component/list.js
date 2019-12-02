@@ -6,7 +6,7 @@ import Item from './item'
 
 function List(props){
   return (
-    <Table striped bordered hover variant="dark">
+    <Table responsive striped bordered hover variant="dark">
       <thead>
         <tr>
           <th>#</th>
