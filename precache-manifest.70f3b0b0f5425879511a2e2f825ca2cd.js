@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "355652470415a2c0cb0f00179af7f506",
+    "revision": "2c1ec530f8499f82aa24b5ae5a32f454",
     "url": "/react-redux-basic-todo/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-redux-basic-todo/static/css/2.17e5ed98.chunk.css"
   },
   {
-    "revision": "1ddc7c132b83934ab229",
+    "revision": "e09b10236c6b72079f01",
     "url": "/react-redux-basic-todo/static/css/main.64976c60.chunk.css"
   },
   {
@@ -16,15 +16,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-redux-basic-todo/static/js/2.65b9a3fa.chunk.js"
   },
   {
-    "revision": "1ddc7c132b83934ab229",
-    "url": "/react-redux-basic-todo/static/js/main.3e2ea769.chunk.js"
+    "revision": "e09b10236c6b72079f01",
+    "url": "/react-redux-basic-todo/static/js/main.975882f9.chunk.js"
   },
   {
     "revision": "1cd3f9870d92e77e88c3",
     "url": "/react-redux-basic-todo/static/js/runtime-main.3d710770.js"
   },
   {
-    "revision": "551fcff229ccdd435f8319c93de31cb3",
-    "url": "/react-redux-basic-todo/static/media/logo.551fcff2.svg"
+    "revision": "37fbbb52cfd654d7ab374a43d67246e8",
+    "url": "/react-redux-basic-todo/static/media/logo.37fbbb52.svg"
   }
 ]);
