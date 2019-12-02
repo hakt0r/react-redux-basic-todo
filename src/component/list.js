@@ -17,7 +17,7 @@ function List(props){
       </thead>
       <tbody>
       { props.todo.map( (item,index)=>{
-          return <Item item={item} index={index}/>
+          return <Item key={index} item={item} index={index}/>
       })}
       </tbody>
     </Table>

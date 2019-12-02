@@ -21,7 +21,7 @@ class Editor extends React.Component {
   }
 
   componentDidUpdate(){
-    if (this.textInput) this.textInput.focus();
+    if ( this.textInput ) this.textInput.focus();
   }
 
   add   = (e)=>{ this.props.dispatch({ type:"ADD"   })}
@@ -33,7 +33,7 @@ class Editor extends React.Component {
   })}
 
   render(){
-    let { editIndex, inputValue } = this.props;
+    let { editIndex, inputValue, inputLegal } = this.props;
     let buttonTitle, buttonAction;
 
     if ( editIndex === -1 ) {
@@ -46,7 +46,7 @@ class Editor extends React.Component {
     }
 
     const keyAction = e => {
-      if ( e.key === "Enter" ) buttonAction(e);
+      if ( inputLegal && e.key === "Enter" ) buttonAction(e);
     }
 
     return (
@@ -69,6 +69,7 @@ class Editor extends React.Component {
               <FontAwesomeIcon icon={faUndo} />
             </Button> }
           <Button
+            disabled={!inputLegal}
             onClick={buttonAction}
             value={inputValue}
             variant="success">

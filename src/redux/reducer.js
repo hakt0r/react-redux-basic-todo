@@ -10,6 +10,9 @@ const defaultState = {
   ...data
 }
 
+if ( defaultState.inputValue.trim() === '' )
+  defaultState.inputLegal = false;
+
 const reducer = ( state=defaultState, action ) => {
 
   let result, todoList, {type} = action;
@@ -17,8 +20,11 @@ const reducer = ( state=defaultState, action ) => {
   switch (type){
 
     case "INPUT":
+      let legalInput = action.value.trim() !== ''
+
       result = {
         ...state,
+        inputLegal: legalInput,
         inputValue: action.value
       };
       break;
