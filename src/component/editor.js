@@ -2,6 +2,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { InputGroup, FormControl, Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFile, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 class Editor extends React.Component {
 
@@ -16,11 +18,11 @@ class Editor extends React.Component {
     let { editIndex, inputValue } = this.props;
     let buttonTitle, buttonAction;
     if ( editIndex === -1 ) {
-      buttonTitle = 'Add'
+      buttonTitle = <FontAwesomeIcon icon={faPlus} />
       buttonAction = this.add
     }
     else {
-      buttonTitle = 'Save'
+      buttonTitle = <FontAwesomeIcon icon={faFile} />
       buttonAction = this.save
     }
     return (
