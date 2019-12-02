@@ -6,10 +6,11 @@ const defaultState = {
   editIndex:-1,
   inputValue:"",
   todo:[],
+
   ...data
 }
 
-const reducer = (state=defaultState,action)=>{
+const reducer = ( state=defaultState, action ) => {
 
   let result, todoList, {type} = action;
 
@@ -18,15 +19,15 @@ const reducer = (state=defaultState,action)=>{
     case "INPUT":
       result = {
         ...state,
-        inputValue:action.value
+        inputValue: action.value
       };
       break;
 
     case "EDIT":
       result = {
         ...state,
-        inputValue:state.todo[action.index].text,
-        editIndex:action.index
+        inputValue: state.todo[action.index].text,
+        editIndex:  action.index
       };
       break;
 
@@ -35,14 +36,14 @@ const reducer = (state=defaultState,action)=>{
 
       todoList[state.editIndex] = {
         ...todoList[state.editIndex],
-        text:state.inputValue
+        text: state.inputValue
       };
 
       result = {
         ...state,
-        todo:todoList,
-        inputValue:"",
-        editIndex:-1
+        todo:       todoList,
+        inputValue: "",
+        editIndex:  -1
       };
       break;
 
@@ -51,20 +52,20 @@ const reducer = (state=defaultState,action)=>{
       todoList.splice(action.index,1);
       result = {
         ...state,
-        todo:todoList
+        todo: todoList
       };
       break;
 
     case "ADD":
       todoList = state.todo.slice();
       todoList.push({
-        text: state.inputValue,
-        status:'todo'
+        text:   state.inputValue,
+        status: 'todo'
       });
       result = {
         ...state,
-        inputValue:"",
-        todo:todoList
+        todo:       todoList,
+        inputValue: ""
       };
       break;
 
@@ -73,12 +74,12 @@ const reducer = (state=defaultState,action)=>{
 
         todoList[action.index] = {
           ...todoList[action.index],
-          status:'done'
+          status: 'done'
         };
 
         result = {
           ...state,
-          todo:todoList
+          todo: todoList
         };
         break;
 
@@ -87,12 +88,12 @@ const reducer = (state=defaultState,action)=>{
 
         todoList[action.index] = {
           ...todoList[action.index],
-          status:'todo'
+          status: 'todo'
         };
 
       result = {
         ...state,
-        todo:todoList
+        todo: todoList
       };
       break;
 
@@ -100,7 +101,9 @@ const reducer = (state=defaultState,action)=>{
       result = state;
       break;
   }
+
   localStorage.setItem( 'todoState', JSON.stringify(result) );
+
   return result;
 }
 
