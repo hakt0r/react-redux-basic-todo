@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-redux-basic-todo/static/css/main.64976c60.chunk.css",
-    "main.js": "/react-redux-basic-todo/static/js/main.c713e0ae.chunk.js",
-    "main.js.map": "/react-redux-basic-todo/static/js/main.c713e0ae.chunk.js.map",
+    "main.js": "/react-redux-basic-todo/static/js/main.3e2ea769.chunk.js",
+    "main.js.map": "/react-redux-basic-todo/static/js/main.3e2ea769.chunk.js.map",
     "runtime-main.js": "/react-redux-basic-todo/static/js/runtime-main.3d710770.js",
     "runtime-main.js.map": "/react-redux-basic-todo/static/js/runtime-main.3d710770.js.map",
     "static/css/2.17e5ed98.chunk.css": "/react-redux-basic-todo/static/css/2.17e5ed98.chunk.css",
     "static/js/2.65b9a3fa.chunk.js": "/react-redux-basic-todo/static/js/2.65b9a3fa.chunk.js",
     "static/js/2.65b9a3fa.chunk.js.map": "/react-redux-basic-todo/static/js/2.65b9a3fa.chunk.js.map",
     "index.html": "/react-redux-basic-todo/index.html",
-    "precache-manifest.ca8812d3cf8d2d59684d66a758d440d5.js": "/react-redux-basic-todo/precache-manifest.ca8812d3cf8d2d59684d66a758d440d5.js",
+    "precache-manifest.93b09593814196a80d3778a0a498fe25.js": "/react-redux-basic-todo/precache-manifest.93b09593814196a80d3778a0a498fe25.js",
     "service-worker.js": "/react-redux-basic-todo/service-worker.js",
     "static/css/2.17e5ed98.chunk.css.map": "/react-redux-basic-todo/static/css/2.17e5ed98.chunk.css.map",
     "static/css/main.64976c60.chunk.css.map": "/react-redux-basic-todo/static/css/main.64976c60.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.17e5ed98.chunk.css",
     "static/js/2.65b9a3fa.chunk.js",
     "static/css/main.64976c60.chunk.css",
-    "static/js/main.c713e0ae.chunk.js"
+    "static/js/main.3e2ea769.chunk.js"
   ]
 }
