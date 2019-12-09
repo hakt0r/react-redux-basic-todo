@@ -21,7 +21,7 @@ class Editor extends React.Component {
   }
 
   componentDidUpdate(){
-    if ( this.textInput ) this.textInput.focus();
+    if ( this.textInput && this.props.editIndex !== -1 ) this.textInput.focus();
   }
 
   add   = (e)=>{ this.props.dispatch({ type:"ADD"   })}
